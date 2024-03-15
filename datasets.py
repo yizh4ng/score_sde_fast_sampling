@@ -182,6 +182,7 @@ def get_dataset(config, additional_dim=None, uniform_dequantization=False, evalu
 
       return dict(image=img, label=d.get('label', None))
 
+
   def create_dataset(dataset_builder, split):
     dataset_options = tf.data.Options()
     dataset_options.experimental_optimization.map_parallelization = True
@@ -189,7 +190,7 @@ def get_dataset(config, additional_dim=None, uniform_dequantization=False, evalu
     dataset_options.experimental_threading.max_intra_op_parallelism = 1
     read_config = tfds.ReadConfig(options=dataset_options)
     if isinstance(dataset_builder, tfds.core.DatasetBuilder):
-      dataset_builder.download_and_prepare(download_dir="downloads")
+      dataset_builder.download_and_prepare(download_dir="./downloads")
       ds = dataset_builder.as_dataset(
         split=split, shuffle_files=True, read_config=read_config)
     else:

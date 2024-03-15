@@ -52,7 +52,7 @@ def get_default_configs():
   
   # data
   config.data = data = ml_collections.ConfigDict()
-  data.dir = "/scratch/jolicoea/datasets"
+  data.dir = "./scratch/jolicoea/datasets"
   data.dataset = 'CIFAR10'
   data.image_size = 32
   data.random_flip = True

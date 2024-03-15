@@ -52,7 +52,7 @@ def get_default_configs():
 
   # data
   config.data = data = ml_collections.ConfigDict()
-  data.dir = "/scratch/jolicoea/datasets"
+  data.dir = "./scratch/jolicoea/datasets"
   data.dataset = 'LSUN'
   data.image_size = 256
   data.random_flip = True

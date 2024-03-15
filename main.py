@@ -22,6 +22,9 @@ from ml_collections.config_flags import config_flags
 import tensorflow as tf
 import logging
 import os
+os.environ['CUDA_VISIBLE_DEVICES'] = '5,6,7'
+os.environ['TF_USE_NVLINK_FOR_PARALLEL_COMPILATION'] = '0'
+os.environ[' JAX_OMNISTAGING '] = '1'
 
 FLAGS = flags.FLAGS
 

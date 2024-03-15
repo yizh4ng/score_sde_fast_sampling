@@ -23,7 +23,8 @@ import tensorflow_gan as tfgan
 import tensorflow_hub as tfhub
 import os
 
-INCEPTION_TFHUB = '/scratch/jolicoea/checkpoints/tfgan_eval_inception_1'
+# INCEPTION_TFHUB = './scratch/jolicoea/checkpoints/tfgan_eval_inception_1'
+INCEPTION_TFHUB = 'https://tfhub.dev/tensorflow/tfgan/eval/inception/1'
 INCEPTION_OUTPUT = 'logits'
 INCEPTION_FINAL_POOL = 'pool_3'
 _DEFAULT_DTYPES = {
@@ -36,7 +37,7 @@ INCEPTION_DEFAULT_IMAGE_SIZE = 299
 def get_inception_model(inceptionv3=False):
   if inceptionv3:
     return tfhub.load(
-      '/scratch/jolicoea/checkpoints/imagenet_inception_v3_feature_vector_4')
+      'https://tfhub.dev/google/imagenet/inception_v3/feature_vector/4')
   else:
     return tfhub.load(INCEPTION_TFHUB)
 
